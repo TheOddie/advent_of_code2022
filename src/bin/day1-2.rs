@@ -14,5 +14,9 @@ fn main()
         nums[elf_num - 1] += num;
     }
 
-    println!("{:?}", nums.iter().max().unwrap());
+    nums.sort();
+    let len = nums.len();
+    let sum: u32 = nums.split_at(len - 3).1.iter().sum();
+
+    println!("{:?}", sum);
 }
