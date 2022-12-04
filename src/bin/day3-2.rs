@@ -1,4 +1,3 @@
-use std::collections::HashSet;
 
 fn main() {
     let elves = include_str!("../input/day3.txt")
@@ -27,8 +26,9 @@ fn similarity(a: &Vec<char>, b: &Vec<char>, c: &Vec<char>) -> char
     {
         for j in b.iter()
         {
+            if i.ne(j) {continue;}
             for k in c.iter() {
-                if i.eq(j) && i.eq(k)
+                if i.eq(k)
                 {
                     return *i;
                 }
